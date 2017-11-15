@@ -13,17 +13,25 @@
 int main(void)
 {
 	char ch;
+	int substitution_count = 0;
 
 	printf("Enter input (%c to exit):\n", STOP);
 	while ((ch = getchar()) != STOP)
 	{
 		if (ch == '.')
-			printf("!");
+		{
+		substitution_count++;
+		printf("!");
+		}
 		else if (ch == '!')
-			printf("!!");
+		{
+		substitution_count++;
+		printf("!!");
+		}
 		else
-			printf("%c", ch);
+		putchar(ch);
 	}
+	printf("The program has done the substitution %d time(s)", substitution_count);
 
 	return 0;
 }
